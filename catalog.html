@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Trend Trove - Каталог</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    
+    <main>
+        <h2>Каталог товаров</h2>
+        
+        <div class="filter-section">
+            <label for="category-filter">Фильтр по категории:</label>
+            <select id="category-filter">
+                <option value="all">Все товары</option>
+                <option value="tops">Верхняя одежда</option>
+                <option value="bottoms">Низ</option>
+            </select>
+        </div>
+        
+        <div class="product-card" data-category="tops" data-price="1500" data-id="1">
+            <h3>Базовая футболка</h3>
+            <img src="images/tshirt_small.jpg" alt="Базовая футболка" width="200" height="200">
+            <p class="price">1500 руб.</p>
+            <button class="add-to-cart-btn" data-id="1">Добавить в корзину</button>
+            <p><a href="item1.html">Подробнее</a></p>
+        </div>
+        <hr>
+        
+        <div class="product-card" data-category="tops" data-price="3200" data-id="2">
+            <h3>Худи оверсайз</h3>
+            <img src="images/hoodie_small.jpg" alt="Худи оверсайз" width="200" height="200">
+            <p class="price">3200 руб.</p>
+            <button class="add-to-cart-btn" data-id="2">Добавить в корзину</button>
+            <p><a href="item2.html">Подробнее</a></p>
+        </div>
+        <hr>
+        
+        <div class="product-card" data-category="bottoms" data-price="2800" data-id="3">
+            <h3>Джинсы прямого кроя</h3>
+            <img src="images/jeans_small.jpg" alt="Джинсы" width="200" height="200">
+            <p class="price">2800 руб.</p>
+            <button class="add-to-cart-btn" data-id="3">Добавить в корзину</button>
+            <p><a href="item3.html">Подробнее</a></p>
+        </div>
+        
+        <section class="cart-section">
+            <h2>Ваша корзина</h2>
+            <div id="cart-items">
+                <p>Корзина пуста</p>
+            </div>
+            <p><strong>Итого: <span id="cart-total">0</span> руб.</strong></p>
+            <button id="pay-btn" class="pay-btn">Оплатить</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2026 Trend Trove. Все права защищены</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
