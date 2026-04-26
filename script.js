@@ -12,6 +12,7 @@ const addToCart = (productId) => {
     if (product) {
         cart.push(product);
         renderCart();
+        saveCartToLocalStorage();
         console.log(`Товар "${product.name}" добавлен в корзину`);
     }
 };
@@ -19,6 +20,7 @@ const addToCart = (productId) => {
 const removeFromCart = (index) => {
     cart.splice(index, 1);
     renderCart();
+    saveCartToLocalStorage();
 };
 
 const calculateTotal = () => {
@@ -69,6 +71,7 @@ const processPayment = () => {
     alert(`Оплата прошла успешно!\nСумма: ${total} руб.\nСпасибо за покупку!`);
     cart = [];
     renderCart();
+    saveCartToLocalStorage();
 };
 
 const filterProducts = (category) => {
@@ -85,7 +88,21 @@ const filterProducts = (category) => {
     });
 };
 
+const saveCartToLocalStorage = () => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+};
+
+const loadCartFromLocalStorage = () => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        renderCart();
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+    
+    loadCartFromLocalStorage();
     
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
